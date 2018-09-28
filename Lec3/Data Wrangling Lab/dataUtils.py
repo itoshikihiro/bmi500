@@ -40,7 +40,7 @@ class DataUtils:
     #spliting a column into two without changing the original column, and append two two columns
     def splitColIntoTwo(self,df,colname,newname1,newname2):
         returnDf = df;
-        returnDf[newname1],returnDf[newname2]=zip(*returnDf[colname].map(lambda x: [x[0],x[1:]]))
+        returnDf[newname1],returnDf[newname2]=zip(*returnDf[colname].map(lambda x: [x[0],x[1:len(x)-1]]))
         return returnDf;
 
     #specifically change time data
